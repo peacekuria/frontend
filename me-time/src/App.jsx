@@ -1,4 +1,4 @@
-// frontend/src/App.js
+// frontend/src/App.jsx
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Assessment from './components/Assessment';
