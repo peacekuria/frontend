@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import './DisorderSearch.css';
 
+// Backend API base URL
+const API_BASE_URL = 'http://localhost:8000';
+
 const DisorderSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [disorder, setDisorder] = useState(null);
@@ -21,7 +24,7 @@ const DisorderSearch = () => {
     
     try {
       // Call backend API
-      const response = await fetch(`/api/disorders/search?name=${searchTerm}`);
+      const response = await fetch(`${API_BASE_URL}/api/disorders/search?name=${searchTerm}`);
       
       if (!response.ok) {
         throw new Error('Disorder not found');

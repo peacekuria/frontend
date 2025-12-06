@@ -10,6 +10,8 @@ const Assessment = () => {
   
   // 5 assessment questions
   const questions = [
+  // Backend API base URL
+  const API_BASE_URL = 'http://localhost:8000';
     "Have you felt sad or hopeless recently?",
     "Have you lost interest in activities you used to enjoy?",
     "Have you had changes in appetite or weight?",
@@ -46,7 +48,7 @@ const Assessment = () => {
       });
       
       const data = await response.json();
-      setResult(data);
+        const response = await fetch(`${API_BASE_URL}/api/assessments`, {
       
     } catch (error) {
       console.error('Error:', error);
